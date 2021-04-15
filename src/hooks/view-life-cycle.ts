@@ -20,11 +20,9 @@ function useMainLifecycle(props: MainLifecycle) {
             setLoaded(true);
             onDidLoad && onDidLoad();
         }
-        if (visible) {
-            onDidAppear && onDidAppear();
-        } else if (visible === false) {
-            onDidDisappear && onDidDisappear();
-        }
+
+        visible !== undefined && (visible ? onDidAppear && onDidAppear() : onDidDisappear && onDidDisappear());
+
         return () => {
             onWillUnload && onWillUnload();
         };

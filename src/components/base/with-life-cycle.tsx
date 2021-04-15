@@ -31,12 +31,9 @@ function withMainLifecycle(WrappedComponent: React.ComponentClass | React.Functi
 
         _onViewLife() {
             const { visible, onDidAppear, onDidDisappear } = this.props;
-            if (visible) {
-                onDidAppear && onDidAppear();
-            } else if (visible === false) {
-                onDidDisappear && onDidDisappear();
-            }
+            visible !== undefined && (visible ? onDidAppear && onDidAppear() : onDidDisappear && onDidDisappear());
         }
+
         render() {
             return <WrappedComponent {...this.props} />;
         }
