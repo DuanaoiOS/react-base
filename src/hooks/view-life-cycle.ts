@@ -5,7 +5,7 @@
 
 import { useEffect, useLayoutEffect, useState } from 'react';
 
-import { MainLifecycle } from '../protocols/view-life-cycle';
+import { MainLifecycle } from '@protocols/view-life-cycle';
 
 /**
  * 组件加载、显示/隐藏生命周期钩子

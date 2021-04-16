@@ -15,11 +15,16 @@
         "resolveJsonModule": true,
         "isolatedModules": true,
         "noEmit": true,
-        "jsx": "react-jsx"
+        "jsx": "react-jsx",
+        "baseUrl": "./src",
+        "paths": {
+            "@hooks/*": ["./hooks/*"],
+            "@utils/*": ["./utils/*"],
+            "@service/*": ["./service/*"],
+            "@protocols/*": ["./protocols/*"],
+            "@extensions/*": ["./extensions/*"],
+            "@components/*": ["./components/*"]
+        }
     },
-    "include": ["src"],
-    "paths": {
-        "@hooks/*": ["src/hooks/*"],
-        "@protocols/*": ["src/protocols/*"]
-    }
+    "include": ["src"]
 }
